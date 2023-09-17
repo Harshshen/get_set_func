@@ -1,16 +1,34 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0; // setting the version of the solidity 
+pragma solidity ^0.8.0;
 
-contract myFirstContract { // declaring the contract here
-    uint256 public number; // declaring the undefined integer state variable 
-    
-    // function to set the value of number
-    function setValue(uint256 newNumber) public {
-        number = newNumber;
+contract EtherConverter {
+    // Function to convert Ether to Wei
+    function etherToWei(uint256 etherAmount) public pure returns (uint256) {
+        return etherAmount * 1 ether;
     }
 
-    // function to get the value 
-    function getValue() public view returns (uint256) {
-        return number;
+    // Function to convert Ether to Gwei
+    function etherToGwei(uint256 etherAmount) public pure returns (uint256) {
+        return etherAmount * 1 gwei;
+    }
+
+    // Function to convert Wei to Gwei
+    function weiToGwei(uint256 weiAmount) public pure returns (uint256) {
+        return weiAmount / 1 gwei;
+    }
+
+    // Function to convert Wei to Ether
+    function weiToEther(uint256 weiAmount) public pure returns (uint256) {
+        return weiAmount / 1 ether;
+    }
+
+    // Function to convert Gwei to Ether
+    function gweiToEther(uint256 gweiAmount) public pure returns (uint256) {
+        return gweiAmount / 1 gwei;
+    }
+
+    // Function to convert Gwei to Wei
+    function gweiToWei(uint256 gweiAmount) public pure returns (uint256) {
+        return gweiAmount * 1 gwei;
     }
 }
